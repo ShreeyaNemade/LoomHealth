@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { Box, InputLabel, Typography, Button, TextField } from "@mui/material";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 
 const CreateBlog = () => {
     const id = localStorage.getItem("userId");
+
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         title: '',
         description: '',
         image: ''
     });
+
     //input change
     const handleChange = (e) => {
         setInputs(prevState => ({
